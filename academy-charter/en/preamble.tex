@@ -1,0 +1,15 @@
+% Shared English settings. Page geometry and body size are set in each main file.
+\usepackage[english]{babel}
+\renewcommand{\contentsname}{Contents}
+\ModifyHeading{chapter}{label_format={Chapter \thechapter},font={\huge\sffamily\gtfamily\bfseries\raggedright\hyphenpenalty=10000}}
+\ModifyHeading{section}{font={\Large\sffamily\gtfamily\bfseries\raggedright\hyphenpenalty=10000}}
+\newenvironment{articles}{\begin{enumerate}[label=Article \arabic*.,widest=11,labelsep=.5em,leftmargin=*,align=left,font=\bfseries]}{\end{enumerate}}
+\newenvironment{paragraphs}{\begin{enumerate}[label=\arabic*.,start=2,labelsep=.5em,leftmargin=*]}{\end{enumerate}}
+\newenvironment{subitems}{\begin{enumerate}[label=(\arabic*),labelsep=.5em,leftmargin=*]}{\end{enumerate}}
+\widowpenalty=10000
+\clubpenalty=10000
+\raggedbottom
+\makeatletter
+\patchcmd{\@dottedtocline}{・}{.}{}{\PackageError{rga-english}{Unable to set English contents leaders}{Check the jlreq contents definition.}}
+\makeatother
+\newcommand{\translationnotice}{\noindent This English version is a reference translation. In the event of any discrepancy, the Japanese version prevails.\par}
